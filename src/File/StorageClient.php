@@ -2,15 +2,13 @@
 
 namespace File;
 
-use GuzzleHttp\Client;
+use CURLFile;
 use GuzzleHttp\Exception\GuzzleException;
 
 class StorageClient
 {
     public $url = "";
 
-
-    
     /**
      * @throws GuzzleException
      */
@@ -28,17 +26,29 @@ class StorageClient
             $this->url = "https://localhost:8000/api/upload";
         }
 
-        $client = new Client();
-        $response = $client->request("POST", $this->url, [
-            "multipart" => [
-                "bucket" => $bucket,
-                "stoken" => $token,
-                "folder" => $folder,
-                "file" => $file
-            ]
-        ]);
+        $file_path = "./";
+        $file_name = "test.txt";
 
-        $response->getBody()->getContents();
+        $post_data = [
+            "bucket" => $bucket,
+            "token" => $token,
+            "folder" => $folder
+        ];
+
+        // cURL 설정
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $this->url);
+        curl_setopt($curl, CURLOPT_POST, true);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, array(
+            'file' => new CURLFile($file_path, 'text/plain', $file_name),
+            'data' => http_build_query($post_data),
+        ));
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+        // 서버로부터 받은 응답 처리
+        $response = curl_exec($curl);
+
+
     }
 
     public function deleteFullPath($token, $fullPath) {
