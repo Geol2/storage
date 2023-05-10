@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "File\\": "src/File"
+            "Geol\\File\\": "src/File"
         }
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace File;
+namespace Geol\File;
 
 class ZeroStorage implements Storage
 {

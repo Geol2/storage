@@ -1,7 +1,7 @@
 <?php
 require 'vendor/autoload.php';
 
-use File\StorageClient;
+use Geol\File\StorageClient;
 
 $bucket = $_POST['bucket'];
 $stoken = $_POST['stoken'];
