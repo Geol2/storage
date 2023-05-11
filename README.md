@@ -26,6 +26,7 @@ composer update
 
 서비스에서의 파일 데이터를 받아 연결된 파일 서버로 전송하기 위한 명세서
 
+#### 업로드
 ```php
 require 'vendor/autoload.php';
 
@@ -39,4 +40,29 @@ $fileData = $_FILES['file_data'];
 // 서비스에서 사용할 로직
 $client = new StorageClient();
 $client->upload($bucket, $stoken, $folder, $fileData);
+```
+
+#### 풀경로 삭제
+```php
+require 'vendor/autoload.php';
+
+use Geol\File\StorageClient;
+
+$stoken = $_POST['stoken'];
+$fullPath = $_POST['path'];
+$client = new StorageClient();
+$client->deleteFullPath($stoken, $fullPath);
+```
+
+#### 버킷 경로에서부터 삭제
+```php
+require 'vendor/autoload.php';
+
+use Geol\File\StorageClient;
+
+$bucket = $_POST['bucket'];
+$stoken = $_POST['stoken'];
+$localPath = $_POST['path'];
+$client = new StorageClient();
+$client->deleteLocalPath($bucket, $stoken, $localPath);
 ```
