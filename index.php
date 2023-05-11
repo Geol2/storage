@@ -4,13 +4,13 @@ require 'vendor/autoload.php';
 use Geol\File\StorageClient;
 
 # 업로드
-//$bucket = $_POST['bucket'];
-//$stoken = $_POST['stoken'];
-//$folder = $_POST['folder'];
-//$fileData = $_FILES['file_data'];
+$bucket = $_POST['bucket'];
+$stoken = $_POST['stoken'];
+$folder = $_POST['folder'];
+$fileData = $_FILES['file_data'];
 
-//$client = new StorageClient();
-//$client->upload($bucket, $stoken, $folder, $fileData);
+$client = new StorageClient();
+$client->upload($bucket, $stoken, $folder, $fileData);
 
 # 풀경로 삭제
 //$stoken = $_POST['stoken'];

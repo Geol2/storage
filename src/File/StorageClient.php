@@ -10,7 +10,7 @@ class StorageClient implements StorageClientImpl
 
     public function upload($bucket, $token, $folder, $file)
     {
-        $this->url = Client::requestUploadHost( getenv("APP_ENV") );
+        $this->url = Client::requestUploadHost();
 
         $post = [
             'bucket' => $bucket,
@@ -26,7 +26,7 @@ class StorageClient implements StorageClientImpl
 
     public function deleteLocalPath($bucket, $token, $localPath)
     {
-        $this->url = Client::requestDeleteHost( getenv("APP_ENV") );
+        $this->url = Client::requestDeleteHost();
 
         $post = [
             "bucket" => $bucket,
