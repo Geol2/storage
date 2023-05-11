@@ -4,7 +4,7 @@ namespace Geol\File;
 
 class Client
 {
-    public static function requestUploadHost($env = "local"): string
+    public static function requestUploadHost($env = "local")
     {
         if($env == "production") {
             $url = "https://zerostorage.zdev.co.kr/api/upload";
@@ -21,7 +21,7 @@ class Client
         return $url;
     }
 
-    public static function requestDeleteHost($env = "local"): string
+    public static function requestDeleteHost($env = "local")
     {
         if($env == "production") {
             $url = "https://zerostorage.zdev.co.kr/api/delete";
@@ -38,7 +38,7 @@ class Client
         return $url;
     }
 
-    public static function requestDeleteFullHost($env = "local"): string
+    public static function requestDeleteFullHost($env = "local")
     {
         if($env == "production") {
             $url = "https://zerostorage.zdev.co.kr/api/full/delete";

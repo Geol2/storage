@@ -4,10 +4,10 @@ namespace Geol\File;
 
 class Curl
 {
-    public static function postCurl($url, $postData, $header = null): string
+    public static function postCurl($url, $postData, $header = null)
     {
         $curl = curl_init();
-        if( str_contains($url, "https://") ) {
+        if( strpos($url, "https://") ) {
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
             curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
         }

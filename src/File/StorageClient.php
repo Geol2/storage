@@ -6,9 +6,9 @@ use CURLFile;
 
 class StorageClient implements StorageClientImpl
 {
-    public string $url = "";
+    public $url = "";
 
-    public function upload($bucket, $token, $folder, $file): void
+    public function upload($bucket, $token, $folder, $file)
     {
         $this->url = Client::requestUploadHost( getenv("APP_ENV") );
 
@@ -24,7 +24,7 @@ class StorageClient implements StorageClientImpl
         echo $result;
     }
 
-    public function deleteLocalPath($bucket, $token, $localPath): void
+    public function deleteLocalPath($bucket, $token, $localPath)
     {
         $this->url = Client::requestDeleteHost( getenv("APP_ENV") );
 
@@ -38,7 +38,7 @@ class StorageClient implements StorageClientImpl
         echo $result;
     }
 
-    public function deleteFullPath($token, $fullPath): void
+    public function deleteFullPath($token, $fullPath)
     {
         $this->url = Client::requestDeleteFullHost( getenv("APP_ENV") );
 
