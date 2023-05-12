@@ -23,7 +23,7 @@ class StorageClient implements StorageClientImpl
         $headers = array("Content-Type:multipart/form-data");
         $result = Curl::postCurl($this->url, $post, $headers);
 
-        echo $result;
+        return $result;
     }
 
     public function deleteLocalPath($bucket, $token, $localPath)
@@ -35,7 +35,7 @@ class StorageClient implements StorageClientImpl
         ];
         $result = Curl::postCurl($this->url, $post);
 
-        echo $result;
+        return $result;
     }
 
     public function deleteFullPath($token, $fullPath)
@@ -46,6 +46,6 @@ class StorageClient implements StorageClientImpl
         ];
         $result = Curl::postCurl($this->url, $post);
 
-        echo $result;
+        return $result;
     }
 }

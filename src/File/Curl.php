@@ -7,7 +7,7 @@ class Curl
     public static function postCurl($url, $postData, $header = null)
     {
         $curl = curl_init();
-        if( strpos($url, "https://") ) {
+        if( strpos($url, "https://") !== false ) {
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
             curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
         }
