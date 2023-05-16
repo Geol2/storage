@@ -3,6 +3,7 @@
 namespace Geol\File;
 
 use Geol\Http\Response;
+use Monolog\Logger;
 
 class LocalStorage
 {
