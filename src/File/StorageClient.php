@@ -12,13 +12,14 @@ class StorageClient implements StorageClientImpl
         $this->url = $url;
     }
 
-    public function upload($bucket, $token, $folder, $file)
+    public function upload($bucket, $token, $folder, $file, $overwrite)
     {
         $post = [
             'bucket' => $bucket,
             'stoken' => $token,
             'folder' => $folder,
-            'file_data'=> new CURLFile($file['tmp_name'], $file['type'], $file['name'])
+            'file_data'=> new CURLFile($file['tmp_name'], $file['type'], $file['name']),
+            'overwrite' => $overwrite
         ];
         $headers = array("Content-Type:multipart/form-data");
         $result = Curl::postCurl($this->url, $post, $headers);

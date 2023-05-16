@@ -4,7 +4,7 @@ namespace Geol\File;
 
 interface StorageClientImpl
 {
-    public function upload($bucket, $token, $folder, $file);
+    public function upload($bucket, $token, $folder, $file, $overwrite);
 
     public function deleteFullPath($token, $fullPath);
 
