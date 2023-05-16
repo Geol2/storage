@@ -11,7 +11,7 @@ composer 의존성 관리 도구는 별도로 설치하도록 한다
 ```json
 {
     "require": {
-        "geol/storage": "1.0"
+        "geol/storage": "1.*"
     }
 }
 ```
@@ -38,7 +38,9 @@ $folder = $_POST['folder'];
 $fileData = $_FILES['file_data'];
 
 // 서비스에서 사용할 로직
+$url = Client::requestHost("https://example.com/");
 $client = new StorageClient();
+$client->setUrl($url);
 $client->upload($bucket, $stoken, $folder, $fileData);
 ```
 
@@ -50,7 +52,9 @@ use Geol\File\StorageClient;
 
 $stoken = $_POST['stoken'];
 $fullPath = $_POST['path'];
+$url = Client::requestHost("https://example.com/");
 $client = new StorageClient();
+$client->setUrl($url);
 $client->deleteFullPath($stoken, $fullPath);
 ```
 
@@ -63,6 +67,8 @@ use Geol\File\StorageClient;
 $bucket = $_POST['bucket'];
 $stoken = $_POST['stoken'];
 $localPath = $_POST['path'];
+$url = Client::requestHost("https://example.com/");
 $client = new StorageClient();
+$client->setUrl($url);
 $client->deleteLocalPath($bucket, $stoken, $localPath);
 ```
