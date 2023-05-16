@@ -3,7 +3,7 @@
     "description": "storage SDK",
     "type": "library",
     "minimum-stability": "stable",
-    "version": "1.1.71",
+    "version": "1.1.72",
     "license": "MIT",
     "authors": [
         {
