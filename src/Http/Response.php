@@ -6,7 +6,7 @@ class Response
 {
     public $URL_FILE_UPLOAD_OK = [
         "code" => "200",
-        "fil_url" => ""
+        "file_url" => ""
     ];
 
     const FILE_UPLOAD_OK = [
@@ -68,7 +68,7 @@ class Response
     ];
 
     public function setUrlFileUploadOk($url) {
-        $this->URL_FILE_UPLOAD_OK['fil_url'] = $url;
+        $this->URL_FILE_UPLOAD_OK['file_url'] = $url;
     }
 
     public function getUrlFileUploadOk() {
