@@ -50,8 +50,8 @@ class LocalStorage
         $targetDir  = $path."/data/".$folder;
         $targetPath = $path."/data/".$folder."/".$file['name'];
 
-        if($_SERVER['_URL_HOME']) {
-            $targetUrl = $_SERVER['_URL_HOME'] . "/data/" . $folder . "/" . $file['name'];
+        if(_URL_HOME) {
+            $targetUrl = _URL_HOME . "/data/" . $folder . "/" . $file['name'];
         } else if($_SERVER['APP_URL']) {
             $targetUrl = $_SERVER['APP_URL'] . "/data/" . $folder . "/" . $file['name'];
         } else {
