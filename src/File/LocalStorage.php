@@ -19,9 +19,9 @@ class LocalStorage
         $name = $seq;
 
         if( empty($ext) ) {
-            $newName = $name."-".time();
+            $newName = $name."_".time();
         } else {
-            $newName = $name."-".time().".".$ext;
+            $newName = $name."_".time().".".$ext;
         }
 
         return $newName;
