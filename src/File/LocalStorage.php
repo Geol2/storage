@@ -52,9 +52,10 @@ class LocalStorage
 
         if($_SERVER['_URL_HOME']) {
             $targetUrl = $_SERVER['_URL_HOME'] . "/data/" . $folder . "/" . $file['name'];
-        }
-        if($_SERVER['APP_URL']) {
+        } else if($_SERVER['APP_URL']) {
             $targetUrl = $_SERVER['APP_URL'] . "/data/" . $folder . "/" . $file['name'];
+        } else {
+            $targetUrl = "이미지 주소 경로를 찾을 수 없습니다. 서버의 기본 주소를 확인해주세요.";
         }
 
         try {
@@ -71,7 +72,7 @@ class LocalStorage
 
             if( move_uploaded_file($file['tmp_name'], $targetPath)) {
                 $response = new Response();
-                $response->setUrlFileUploadOk($targetPath);
+                $response->setUrlFileUploadOk($targetUrl);
                 $result = $response->URL_FILE_UPLOAD_OK;
             }
         } catch(\Exception $e) {
