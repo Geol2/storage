@@ -21,8 +21,8 @@ class Response
 
 
     const FILE_UPLOAD_ALLOW_FILE = [
-            "code" => "400",
-            "error" => "허용하지 않는 파일을 추가하였습니다."
+        "code" => "400",
+        "error" => "허용하지 않는 파일을 추가하였습니다."
     ];
 
     const LOCATION_NOT_ALLOW = [
@@ -31,24 +31,29 @@ class Response
     ];
 
     const TOKEN_NOT_FOUND = [
-            "code" => "404",
-            "res_msg" => "토큰을 찾을 수 없습니다. 확인 후, 다시 시도해주세요."
+        "code" => "404",
+        "res_msg" => "토큰을 찾을 수 없습니다. 확인 후, 다시 시도해주세요."
     ];
 
     const BUCKET_NOT_FOUND = [
-            "code" => "404",
-            "res_msg" => "버킷과 토큰을 찾을 수 없습니다. 확인 후, 다시 시도해주세요."
+        "code" => "404",
+        "res_msg" => "버킷과 토큰을 찾을 수 없습니다. 확인 후, 다시 시도해주세요."
+    ];
+
+    const URL_NOT_FOUND = [
+        "code" => "404",
+        "res_msg" => "웹 주소를 찾을 수 없습니다. 웹 주소가 있는지 확인해주시거나 담당 관리자에게 문의해주세요."
     ];
 
     const FILE_DELETE_NOT_FOUND = [
-            "code" => "404",
-            "res_msg" => "이미 삭제되었거나 파일을 찾을 수 없습니다."
+        "code" => "404",
+        "res_msg" => "이미 삭제되었거나 파일을 찾을 수 없습니다."
     ];
 
     const FILE_UPLOAD_CONFLICT = [
-            "code" => "409",
-            "isRequestOverwrite" => true,
-            "error" => "이미 존재하는 파일입니다."
+        "code" => "409",
+        "isRequestOverwrite" => true,
+        "error" => "이미 존재하는 파일입니다."
     ];
 
 
